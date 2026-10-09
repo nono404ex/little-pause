@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7e9df">
+<title>Little Pause</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<div class="wash"></div>
+<div class="grain"></div>
+
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Little Pause home"><span class="brand-mark">lp.</span><span>little pause</span></a>
+  <button class="music-toggle" id="musicToggle" aria-label="Pilih musik"><span class="music-dot"></span><span id="musicLabel">add a song</span></button>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow"><span class="tiny-star">✳</span> a tiny corner of calm</div>
+    <h1>take a little<br><em>pause, kaa.</em></h1>
+    <p class="hero-copy">buat nemenin sebentar di sela-sela hari yang lagi penuh.</p>
+    <button class="primary-btn" id="startBtn">buka sebentar <span>↗</span></button>
+    <div class="scroll-note"><span></span> pelan-pelan aja</div>
+    <div class="floating-sticker sticker-sun">☼<small>one thing<br>at a time</small></div>
+    <div class="floating-sticker sticker-flower">✿</div>
+  </section>
+
+  <section class="checkin section-card" id="checkin">
+    <div class="section-label"><span>01</span> a little check-in</div>
+    <div class="card-inner">
+      <div class="mini-illustration" aria-hidden="true"><span class="cup">☕</span><span class="sparkle s1">✦</span><span class="sparkle s2">✧</span></div>
+      <div>
+        <p class="script-line">hei, kaa.</p>
+        <h2>gimana hari kamu hari inii?</h2>
+        <p class="body-copy">semoga ada hal kecil yang bikin kamu senyum, walaupun hari ini lumayan capek.</p>
+      </div>
+    </div>
+    <div class="question-box">
+      <p>hari ini rasanya lebih ke mana?</p>
+      <div class="choice-row">
+        <button class="choice" data-answer="capek">lumayan capek</button>
+        <button class="choice" data-answer="aman">masih aman</button>
+        <button class="choice" data-answer="campur">campur aduk</button>
+      </div>
+      <div class="answer" id="answer" aria-live="polite">pilih yang paling mendekati, nggak ada jawaban salah.</div>
+    </div>
+  </section>
+
+  <section class="wish-grid">
+    <article class="wish-card wish-one">
+      <div class="section-label"><span>02</span> a tiny wish</div>
+      <div class="flower-stamp">✿</div>
+      <h2>semoga besok<br>lebih ringan.</h2>
+      <p>semoga besok ada lebih banyak hal baik yang dateng ke kamu.</p>
+      <span class="card-tape"></span>
+    </article>
+    <article class="wish-card wish-two">
+      <div class="section-label"><span>03</span> just a reminder</div>
+      <div class="tiny-cloud">☁</div>
+      <h2>nggak harus<br>semua beres hari ini.</h2>
+      <p>kalau hari ini padat, kakanya bisaa ceritaa sama akuu ataupun istirahatt yaa kaa</p>
+      <span class="scribble">take it easy</span>
+    </article>
+  </section>
+
+  <section class="envelope-section">
+    <div class="section-label"><span>04</span> something small</div>
+    <h2>ada pesan kecil<br>buat dibuka.</h2>
+    <p class="body-copy">nggak panjang kok. tinggal buka kalau lagi senggang yaa kaaa.</p>
+    <button class="envelope" id="envelope" aria-label="Buka amplop">
+      <span class="envelope-back"></span><span class="letter"><span>for kaka</span><b>sedikit pesan</b><small>tap to open</small></span><span class="envelope-front"></span><span class="envelope-flap"></span>
+    </button>
+    <div class="letter-message" id="letterMessage" aria-live="polite">
+      <p>untuk sebulan ini yangg udaa aku liat jadwalnya dari kaka sendiri, semoga semua yang lagi kaka usahain berjalan baik yaaa kaa</p>
+      <span>— a small reminder</span>
+    </div>
+  </section>
+
+  <section class="note-section" id="little-note">
+    <div class="note-paper">
+      <div class="note-tape"></div>
+      <div class="section-label"><span>06</span> a little note</div>
+      <p class="script-line">sedikit catatan dari aku</p>
+      <p>kaa, kalau suatu hari kaka lagi capek sama banyak hal, atau cuma pengen cerita tanpa harus nyari solusi, aku ada kok kak. kapan pun kaka pengen cerita, aku bakal usahain buat luangin waktu buat dengerin.</p>
+      <p>aku juga berharap ke depannya kaka bisa lebih nyaman buat terbuka sama aku. cerita apa aja nggak apa apa, kaa. nggak perlu takut bakal dihakimi atau ngerasa ceritanya terlalu berat. aku mungkin nggak selalu punya jawaban yang tepat, tapi seengaknyaa aku bisa dengerin kaka dulu.</p>
+      <p>terus soal kejadian kemarin, tenang aja yaaa ka aku nggak bakal tiba tiba belii apapun ugal ugalan lagi koo. kemarin kayaknya aku semangat bangettt deh sampee lupa rem hehe. dompet juga punya perasaan ternyata.</p>
+      <p>aku masih banyak belajar buat jadi pribadi yang lebih baik, lebih dewasa, dan lebih bisa tanggung jawab sama apa yang aku lakuin. pengen jadi cowok yang bisa diandelin, bukan cuma jago ngomong doang. dan juga bukan jadi laki laki yang harus di ajarin sama cewe, tapi aku pengen belajar sendiri buat hal itu.</p>
+      <p>untuk sekarang, kaka fokus aja sama hal-hal yang lagi kaka jalanin. semoga semuanya dilancarin, dekorannya berjalan sesuai rencana, dan kaka nggak lupa ngasih waktu buat diri sendiri.</p>
+      <p>oh iya, aku nggak buka layanan konsultasi profesional ya, tapi kalau cuma butuh pendengar gratis, kayaknya masih bisa dipertimbangkan. hehe.</p>
+      <span class="note-signoff">— dari aku, yang lagi belajar jadi pendengar yang baik</span>
+    </div>
+  </section>
+
+  <section class="before-you-go section-card">
+    <div class="section-label"><span>05</span> before you go</div>
+    <div class="end-star">✳</div>
+    <p class="script-line">makasih udah mampir.</p>
+    <h2>semoga setelah ini<br>hari kamu terasa<br><em>sedikit lebih ringan.</em></h2>
+    <p class="body-copy">nggak perlu bales apa-apa. semoga malamnya baik, kaa.</p>
+    <button class="again-btn" id="againBtn">lihat dari awal ↺</button>
+  </section>
+</main>
+
+<footer><span>made as a little pause</span><span>take your time, kaka.</span></footer>
+
+<div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
+  <div class="modal-card">
+    <button class="modal-close" id="closeModal" aria-label="Tutup">×</button>
+    <div class="music-note">♫</div>
+    <h2 id="musicTitle">temenin dengan lagu</h2>
+    <p>pilih file lagu dari perangkat. musiknya cuma diputar kalau tombol play ditekan.</p>
+    <label class="file-label">pilih file audio<input id="audioFile" type="file" accept="audio/*"></label>
+    <audio id="audio" controls></audio>
+    <p class="file-hint">file audio tidak diunggah ke mana-mana, hanya diputar di browser ini.</p>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
