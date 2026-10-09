@@ -1,6 +1,22 @@
 const $ = (id) => document.getElementById(id);
 
-$("startBtn").addEventListener("click", () => $("checkin").scrollIntoView({behavior:"smooth",block:"center"}));
+const audio = $("audio");
+audio.volume = 0.15;
+let musicStarted = false;
+
+$("startBtn").addEventListener("click", () => {
+  $("checkin").scrollIntoView({behavior:"smooth",block:"center"});
+  if (!musicStarted) {
+    audio.volume = 0.15;
+    audio.play().then(() => {
+      musicStarted = true;
+      $("musicLabel").textContent = "playing softly ♫";
+    }).catch(() => {
+      const hint = document.querySelector(".file-hint");
+      if (hint) hint.textContent = "kalau lagu belum mulai, tekan play pada pemutar lagu.";
+    });
+  }
+});
 
 const responses = {
   capek: "semoga kaka bisa punya waktu buat narik napas sebentar. nggak harus beresin semuanya sekaligus.",
@@ -33,31 +49,3 @@ const modal = $("musicModal");
 $("musicToggle").addEventListener("click", () => modal.classList.add("show"));
 $("closeModal").addEventListener("click", () => modal.classList.remove("show"));
 modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
-$("audioFile").addEventListener("change", event => {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
-  const audio = $("audio");
-  if (audio.dataset.objectUrl) URL.revokeObjectURL(audio.dataset.objectUrl);
-  const url = URL.createObjectURL(file);
-  audio.dataset.objectUrl = url;
-  audio.src = url;
-  audio.volume = 0.15;
-  audio.pause();
-  $("musicLabel").textContent = file.name.length > 17 ? file.name.slice(0,14) + "..." : file.name;
-  audio.dataset.readyForScroll = "true";
-});
-
-const backgroundAudio = $("audio");
-let scrollMusicStarted = false;
-backgroundAudio.volume = 0.15;
-window.addEventListener("scroll", () => {
-  if (scrollMusicStarted || backgroundAudio.dataset.readyForScroll !== "true") return;
-  if (window.scrollY < 35) return;
-  scrollMusicStarted = true;
-  backgroundAudio.volume = 0.15;
-  backgroundAudio.play().catch(() => {
-    scrollMusicStarted = false;
-    const hint = document.querySelector(".file-hint");
-    if (hint) hint.textContent = "browser memblokir putar otomatis. tekan play sekali, lalu musik tetap pelan.";
-  });
-}, { passive: true });
